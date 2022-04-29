@@ -54,7 +54,7 @@ Visit phpMyAdmin on http://localhost:8001
 
 ## Files of importance
 - **docker-compose.yml**
-- **database/schema.sql** - executed when containers are build, creating:
+- **database/schema.sql** - executed when containers are built, creating:
   - A database named `test_database`
   - A user named `testuser` who has all priviligies in `test_database` with a given password (see file)
   - An example table called `notes` with two entries
