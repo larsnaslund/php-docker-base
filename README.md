@@ -45,6 +45,7 @@ Once everything is up and running, you can test things with the bundled example 
 It will enable strict types, register an autoloader, established a connection to the database and fetch some rows.
 
 Visit example page: http://localhost:8000
+
 Visit phpMyAdmin on http://localhost:8001
 
 
