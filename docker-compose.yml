@@ -1,0 +1,37 @@
+version: "3.8"
+services:
+  php-apache-environment:
+    image: php:8.0-apache
+    build: .
+    ports:
+      - "8000:80"
+    volumes:
+      - ./php/src:/var/www/html/
+    links:
+      - db
+  db:
+    image: mysql
+    container_name: db
+    environment:
+      # Change this
+      MYSQL_ROOT_PASSWORD: rootpassword
+    volumes:
+      - dbdata:/var/lib/mysql
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/schema.sql:ro
+    ports:
+      - "6033:3306"
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: pma
+    links:
+      - db
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      # You likely wish to change this later as well
+      PMA_ARBITRARY: 1
+    restart: always
+    ports:
+      - "8001:80"
+volumes:
+  dbdata:
