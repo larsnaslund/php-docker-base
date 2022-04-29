@@ -1,7 +1,3 @@
-# About
-A very simple bundle to get up and running with PHP 8 (with the PDO and mysqli extentions), Apache, MySQL, and phpMyAdmin.
-
-
 # How to run
 
 **Requirements:** Docker
